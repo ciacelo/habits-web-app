@@ -12,8 +12,9 @@ export default function HabitDay({ completed, amount }: HabitProps) {
   
   return (
     <Popover.Root>
-      <Popover.Trigger className={clsx('w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg', {
-        'bg-violet-900 border-violet-800': completedPercenage >= 0 && completedPercenage < 20,
+      <Popover.Trigger className={clsx('w-10 h-10 border-2 rounded-lg', {
+        'bg-zinc-900 border-zinc-800': completedPercenage == 0,
+        'bg-violet-900 border-violet-800': completedPercenage > 0 && completedPercenage < 20,
         'bg-violet-800 border-violet-700': completedPercenage >= 20 && completedPercenage < 40,
         'bg-violet-700 border-violet-600': completedPercenage >= 40 && completedPercenage < 60,
         'bg-violet-600 border-violet-500': completedPercenage >= 60 && completedPercenage < 80,
@@ -26,7 +27,7 @@ export default function HabitDay({ completed, amount }: HabitProps) {
           <span className='font-semibold text-zinc-400'>terça-feira</span>
           <span className='mt-1 font-extrabold leading-tight text-3xl'>17/01</span>
 
-          <ProgressBar progress={75} />
+          <ProgressBar progress={completedPercenage} />
 
 
           <Popover.Arrow height={9} width={16} className='fill-zinc-900' />
