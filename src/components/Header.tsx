@@ -6,9 +6,9 @@ import { NewHabitForm } from './NewHabitForm'
 
 export default function Header() {
 
-  const handleCreateNewHabit = () => {
+  // const handleCreateNewHabit = () => {
 
-  }
+  // }
 
   return (
     <div className='w-full max-w-3xl mx-auto flex items-center justify-between'>
